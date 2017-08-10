@@ -30,11 +30,11 @@ export default class SimpleSlider extends React.Component {
 				<div key={video.id.toString()} >
 					<div>{video.title}</div>
 					<div>{video.description}</div>
-					<img src={video.img}/>
+					<img src={video.images[0].url}/>
 				</div>
 			);
 		});
-		
+
 		return (
 			<Slider {...this.state.settings}>
 				{slides}
