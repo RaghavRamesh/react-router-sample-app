@@ -7,7 +7,7 @@ export default class VODService {
 	getData() {
 		return axios.get(this.endpointUrl)
 		.then(response =>
-			response.status === 200 ? response.data : []
+			response.status === 200 ? response.data.entries : []
 		)
 		.catch(error =>
 			console.log(error)
