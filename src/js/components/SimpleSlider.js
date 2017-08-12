@@ -28,9 +28,9 @@ export default class SimpleSlider extends React.Component {
 		let slides = videos.map(video => {
 			return (
 				<div key={video.id.toString()} >
+					<img src={video.images[0].url}/>
 					<div>{video.title}</div>
 					<div>{video.description}</div>
-					<img src={video.images[0].url}/>
 				</div>
 			);
 		});
