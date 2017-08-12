@@ -8,7 +8,7 @@ export default class SimpleSlider extends React.Component {
 		this.state =  {
 			settings: {
 				accessibility: true,
-				dots: false,
+				dots: true,
 				focusOnSelect: true,
 				infinite: false,
 				slideCount: this.props.videoData.length,
