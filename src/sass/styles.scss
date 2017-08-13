@@ -1,0 +1,57 @@
+body {
+  background: #222;
+}
+
+.slide-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  width: 95%;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.description {
+  color: #aaa;
+  flex: 1;
+}
+
+.title {
+  color: #bbb;
+}
+
+.sub-title {
+  color: #999;
+}
+
+.year {
+  margin-right: 10px;
+}
+
+.field {
+  color: #888;
+  vertical-align: text-top;
+}
+
+.value {
+  color: #bbb;
+}
+
+.more-details {
+  width: 100%;
+}
+
+td:first-child {
+  width: 30%;
+}
+
+td:last-child {
+  width: 70%;
+}
