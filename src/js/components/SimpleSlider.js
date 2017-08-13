@@ -14,7 +14,28 @@ export default class SimpleSlider extends React.Component {
 				slideCount: this.props.videoData.length,
 				slidesToShow: 5,
 				slidesToScroll: 1,
-				speed: 500
+				speed: 500,
+				responsive: [{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 1
+					}
+				}, {
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2
+					}
+				}, {
+					breakpoint: 1000,
+					settings: {
+						slidesToShow: 3
+					}
+				}, {
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 4
+					}
+				}]
 			}
 		};
 	}
