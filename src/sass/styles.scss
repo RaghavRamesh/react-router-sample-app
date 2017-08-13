@@ -1,7 +1,16 @@
 $background_color: #00504a;
+$color_brighter: #bbb;
+$color_bright: #aaa;
+$color_dim: #999;
+$color_dimmer: #888;
+
 
 body {
   background: $background_color;
+}
+
+.placeholder-text {
+  color: $color_brighter;
 }
 
 .slide-item {
@@ -21,7 +30,7 @@ body {
 }
 
 .description {
-  color: #aaa;
+  color: $color_bright;
   flex: 1;
 
   min-height: 100px;
@@ -31,11 +40,11 @@ body {
 }
 
 .title {
-  color: #bbb;
+  color: $color_brighter;
 }
 
 .sub-title {
-  color: #999;
+  color: $color_dim;
 }
 
 .year {
@@ -43,12 +52,12 @@ body {
 }
 
 .field {
-  color: #888;
+  color: $color_dimmer;
   vertical-align: text-top;
 }
 
 .value {
-  color: #bbb;
+  color: $color_brighter;
 }
 
 .more-details {
