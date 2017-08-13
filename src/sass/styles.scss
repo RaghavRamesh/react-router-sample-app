@@ -21,6 +21,7 @@ body {
 
 .image {
   width: 95%;
+  cursor: pointer;
 }
 
 .details {
@@ -41,6 +42,7 @@ body {
 
 .title {
   color: $color_brighter;
+  cursor: pointer;
 }
 
 .sub-title {

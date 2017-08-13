@@ -6,11 +6,12 @@ import style from '../../sass/styles.scss';
 export default class SimpleSlider extends React.Component {
 	constructor(props) {
 		super(props);
+		this.handleClick = this.handleClick.bind(this);
 		this.state =  {
 			settings: {
 				accessibility: true,
 				dots: true,
-				focusOnSelect: true,
+				focusOnSelect: false,
 				infinite: true,
 				slideCount: this.props.videoData.length,
 				slidesToShow: 5,
@@ -41,18 +42,22 @@ export default class SimpleSlider extends React.Component {
 		};
 	}
 
+	handleClick(data) {
+		this.props.onClickTriggered(data);
+	}
+
 	render() {
 		let videos = this.props.videoData;
 		if (!videos || videos.length === 0) {
-			return <div>Loading videos ...</div>;
+			return <h3 class="placeholder-text">Loading content ...</h3>;
 		}
 
 		let slides = videos.map(video => {
 			return (
-				<div key={video.id.toString()} class="slide-item" >
-					<img class="image" src={video.images[0].url} />
+				<div key={video.id.toString()} class="slide-item">
+					<img class="image" src={video.images[0].url} onClick={() => this.handleClick(video)}/>
 					<div class="details">
-						<h4 class="title">{video.title}</h4>
+						<h4 class="title" onClick={() => this.handleClick(video)}>{video.title}</h4>
 						<p class="sub-title">
 							<span class="year">{new Date(video.publishedDate).getFullYear()}</span>
 							<span class="lang">{video.metadata[0].value.toUpperCase()}</span>
