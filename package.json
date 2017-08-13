@@ -4,7 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive",
+    "test": "mocha --compilers js:babel-core/register",
     "test:watch": "npm run test -- --watch",
     "dev": "webpack-dev-server --content-base src --inline --hot"
   },
