@@ -1,5 +1,7 @@
+$background_color: #00504a;
+
 body {
-  background: #222;
+  background: $background_color;
 }
 
 .slide-item {
@@ -8,7 +10,7 @@ body {
   align-items: center;
 }
 
-img {
+.image {
   width: 95%;
 }
 
@@ -21,6 +23,11 @@ img {
 .description {
   color: #aaa;
   flex: 1;
+
+  min-height: 100px;
+  max-height: 100px;
+
+  overflow: scroll;
 }
 
 .title {

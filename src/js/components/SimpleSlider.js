@@ -11,7 +11,7 @@ export default class SimpleSlider extends React.Component {
 				accessibility: true,
 				dots: true,
 				focusOnSelect: true,
-				infinite: false,
+				infinite: true,
 				slideCount: this.props.videoData.length,
 				slidesToShow: 5,
 				slidesToScroll: 1,
@@ -50,14 +50,14 @@ export default class SimpleSlider extends React.Component {
 		let slides = videos.map(video => {
 			return (
 				<div key={video.id.toString()} class="slide-item" >
-					<img src={video.images[0].url} />
+					<img class="image" src={video.images[0].url} />
 					<div class="details">
 						<h4 class="title">{video.title}</h4>
 						<p class="sub-title">
 							<span class="year">{new Date(video.publishedDate).getFullYear()}</span>
 							<span class="lang">{video.metadata[0].value.toUpperCase()}</span>
 						</p>
-						<p class="description">{video.description}</p>
+						<p class="description" title={video.description}>{video.description}</p>
 						<table class="more-details">
 							<tbody>
 								<tr>
