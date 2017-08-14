@@ -55,15 +55,16 @@ export default class SimpleSlider extends React.Component {
 		let slides = videos.map(video => {
 			return (
 				<div key={video.id.toString()} class="slide-item">
-					<img class="image" src={video.images[0].url} onClick={() => this.handleClick(video)}/>
+					<div class="placeholder-image"></div>
+					<img class="image" alt="Image not found" title="Click to watch video" src={video.images[0].url ? video.images[0].url : "../../assets/images/placeholder-image.jpg"} onClick={() => this.handleClick(video)}/>
 					<div class="details">
-						<h4 class="title" onClick={() => this.handleClick(video)}>{video.title}</h4>
+						<h4 class="title" title="Click to watch video" onClick={() => this.handleClick(video)}>{video.title}</h4>
 						<p class="sub-title">
 							<span class="year">{new Date(video.publishedDate).getFullYear()}</span>
 							<span class="lang">{video.metadata[0].value.toUpperCase()}</span>
 						</p>
 						<p class="description" title={video.description}>{video.description}</p>
-						<table class="more-details">
+						<table class="metadata-table">
 							<tbody>
 								<tr>
 									<td class="field">Director</td>
@@ -73,12 +74,12 @@ export default class SimpleSlider extends React.Component {
 									<td class="field">Cast</td>
 									<td class="value">
 									{
-										video.credits.map((c, i, a) => {
-											if (i > 0) {
-												if (i < a.length - 1)
-													return c.name + ', ';
+										video.credits.map((credit, index, array) => {
+											if (index > 0) {
+												if (index < array.length - 1)
+													return credit.name + ', ';
 												else
-													return c.name;
+													return credit.name;
 											}
 										})
 								  }
