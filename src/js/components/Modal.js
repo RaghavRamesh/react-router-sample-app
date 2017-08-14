@@ -10,11 +10,11 @@ export default class Modal extends React.Component {
     }
 
     return (
-      <div className="backdrop">
-        <div className="dialog">
+      <div className="dialog-backdrop">
+        <div className="dialog-main">
           <div className="dialog-header">
             <h4 className="dialog-title">{this.props.title}</h4>
-            <a onClick={this.props.onClose} className="close-btn"></a>
+            <a className="dialog-close-btn" onClick={this.props.onClose}></a>
           </div>
           <video className="dialog-video" width="640" height="480" controls>
             <source src={this.props.url} type="video/mp4" />
@@ -28,5 +28,7 @@ export default class Modal extends React.Component {
 Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
   show: PropTypes.bool,
-  children: PropTypes.node
+  children: PropTypes.node,
+  title: PropTypes.string,
+  url: PropTypes.string
 };
