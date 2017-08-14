@@ -14,9 +14,7 @@ export default class Modal extends React.Component {
         <div className="dialog">
           <div className="dialog-header">
             <h4 className="dialog-title">{this.props.title}</h4>
-            <button onClick={this.props.onClose} className="close-btn">
-              ⨯
-            </button>
+            <a onClick={this.props.onClose} className="close-btn"></a>
           </div>
           <video className="dialog-video" width="640" height="480" controls>
             <source src={this.props.url} type="video/mp4" />

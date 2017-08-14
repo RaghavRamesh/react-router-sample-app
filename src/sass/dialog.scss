@@ -30,20 +30,17 @@
 }
 
 .close-btn {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-self: center;
-  border-radius: 50%;
-  background: #ccc;
-  color: white;
-  width: 25px;
-  height: 25px;
-  line-height: 10px;
-  font-size: 30px;
-  border: none;
-  outline: none;
+  color: #777;
+  font: 14px/100% arial, sans-serif;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  cursor: pointer;
+
+  &:after {
+    content: '✖'; /* UTF-8 symbol */
+  }
+
   &:hover {
-    background: #ddd;
+    text-decoration: none;
   }
 }
