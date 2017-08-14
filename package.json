@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
     "test:watch": "npm run test -- --watch",
+    "test-cov": "./node_modules/.bin/babel-node node_modules/.bin/babel-istanbul cover node_modules/.bin/_mocha --report text --check-coverage -- --timeout 5000 -u tdd --recursive test/test_helper.js",
     "dev": "webpack-dev-server --content-base src --inline --hot"
   },
   "keywords": [],
