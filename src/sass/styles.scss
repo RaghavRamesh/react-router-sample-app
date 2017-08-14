@@ -1,8 +1,10 @@
-$background_color: #00504a;
-$color_brighter: #bbb;
-$color_bright: #aaa;
-$color_dim: #999;
-$color_dimmer: #888;
+$background_color: #00504A;
+
+/* Intent: In general, more important info is given brighter color */
+$color_brighter: #BBBBBB;
+$color_bright: #AAAAAA;
+$color_dim: #999999;
+$color_dimmer: #888888;
 
 
 body {
@@ -64,21 +66,25 @@ body {
 }
 
 .value {
+  /* Intent: Values are more important than the field, hence given a brighter color */;
   color: $color_brighter;
 }
 
-.more-details {
-  width: 100%;
+$metadata_table_width: 100%;
+$metadata_table_field_column_width: 30%;
+.metadata-table {
+  width: $metadata_table_width;
 }
 
 td:first-child {
-  width: 30%;
+  width: $metadata_table_field_column_width;
 }
 
 td:last-child {
-  width: 70%;
+  width: $metadata_table_width - $metadata_table_field_column_width;
 }
 
 .slick-dots {
+  /* Overriding react-slick lib stylesheet to push the dots further down */
   bottom: -45px;
 }
