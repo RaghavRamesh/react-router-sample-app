@@ -55,7 +55,7 @@ export default class SimpleSliderContainer extends React.Component {
 		return (
 			<div>
 				<SimpleSlider videoData={this.state.videoData} onClickTriggered={(data) => this.openModal(data)}></SimpleSlider>
-				<Modal show={this.state.modal.isOpen} onClose={this.closeModal} url={this.state.modal.url} width={this.state.modal.width} height={this.state.modal.height} title={this.state.modal.title}>
+				<Modal show={this.state.modal.isOpen} onClose={this.closeModal} url={this.state.modal.url} title={this.state.modal.title}>
         </Modal>
 			</div>
 		);
