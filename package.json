@@ -41,7 +41,7 @@
     "react-dom": "^15.4.1",
     "react-html5video": "^2.0.0",
     "react-router": "^3.0.0",
-    "react-slick": "^0.14.6",
+    "react-slick": "git+https://github.com/RaghavRamesh/react-slick-fork.git",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.13.2",
     "webpack": "^1.13.3",
