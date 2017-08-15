@@ -3,11 +3,18 @@ import { Link } from 'react-router';
 import Slider from 'react-slick';
 import style from '../../sass/styles.scss';
 
+/**
+ * Represents the SimpleSlider component which is responsible for rendering the
+ * data received from its parent component. It also communicates to its parent
+ * via a callback prop when the user interacts with a slide.
+ */
 export default class SimpleSlider extends React.Component {
 	constructor(props) {
 		super(props);
 		this.handleClick = this.handleClick.bind(this);
+
 		this.state =  {
+			// Set react-slick configuration settings
 			settings: {
 				accessibility: true,
 				dots: true,
@@ -58,7 +65,7 @@ export default class SimpleSlider extends React.Component {
 					<div class="placeholder-image"></div>
 					<img class="image" alt="Image not found" title="Click to watch video" src={video.images[0].url ? video.images[0].url : "../../assets/images/placeholder-image.jpg"} onClick={() => this.handleClick(video)}/>
 					<div class="details">
-						<h4 class="title" title="Click to watch video" onClick={() => this.handleClick(video)}>{video.title}</h4>
+						<h4 class="title" title="Click to watch video" onClick={() => this.handleClick({ url: video.contents[0].url, title: video.title })}>{video.title}</h4>
 						<p class="sub-title">
 							<span class="year">{new Date(video.publishedDate).getFullYear()}</span>
 							<span class="lang">{video.metadata[0].value.toUpperCase()}</span>
