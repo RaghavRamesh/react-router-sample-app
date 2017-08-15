@@ -38,7 +38,8 @@ export default class SimpleSliderContainer extends React.Component {
 	}
 
 	/**
-	 * Updates the state which causes the Modal to be show the video whose data is now available as props to the component.
+	 * Updates the state which causes the Modal to be show the video whose data is
+	 * now available as props to the component.
 	 * @param {Object} data
 	 * @param {String} data.title
 	 * @param {String} data.url
@@ -72,8 +73,15 @@ export default class SimpleSliderContainer extends React.Component {
 	render() {
 		return (
 			<div>
-				<SimpleSlider videoData={this.state.videoData} onClickTriggered={(data) => this.openModal(data)}></SimpleSlider>
-				<Modal show={this.state.modal.isOpen} onClose={this.closeModal} url={this.state.modal.url} title={this.state.modal.title}>
+				<SimpleSlider
+					videoData={this.state.videoData}
+					onClickTriggered={(data) => this.openModal(data)}>
+				</SimpleSlider>
+				<Modal
+					show={this.state.modal.isOpen}
+					onClose={this.closeModal}
+					url={this.state.modal.url}
+					title={this.state.modal.title}>
         </Modal>
 			</div>
 		);

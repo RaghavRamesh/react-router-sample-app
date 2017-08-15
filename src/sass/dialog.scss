@@ -38,6 +38,8 @@ $dialog_main_background_color: #EEEEEE;
 }
 
 .dialog-video {
+  width: dialog_video_width;
+  height: dialog_video_height;
 }
 
 .dialog-close-btn {

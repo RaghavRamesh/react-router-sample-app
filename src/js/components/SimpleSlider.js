@@ -27,10 +27,11 @@ export default class SimpleSlider extends React.Component {
 				responsive: [{
 					breakpoint: 480,
 					settings: {
-						slidesToShow: 1
+						slidesToShow: 1,
+						dots: false
 					}
 				}, {
-					breakpoint: 768,
+					breakpoint: 668,
 					settings: {
 						slidesToShow: 2
 					}
@@ -49,23 +50,51 @@ export default class SimpleSlider extends React.Component {
 		};
 	}
 
+	/**
+	 * Calls the callback provided by the parent component, with the data passed to it.
+	 * @param {Object} data
+	 * @param {String} data.title
+	 * @param {String} data.url
+	 */
 	handleClick(data) {
 		this.props.onClickTriggered(data);
 	}
 
+	/**
+	 * Parses the video data obtained from the parent component, generates a slide
+	 * for each video and renders them in a Slider component.
+	 */
 	render() {
-		let videos = this.props.videoData;
+		const videos = this.props.videoData;
 		if (!videos || videos.length === 0) {
+			// TODO: Add an animated indicator
 			return <h3 class="placeholder-text">Loading content ...</h3>;
 		}
 
-		let slides = videos.map(video => {
+		// Generates the slide DOM for each video
+		// TODO: Extract into a Slide component
+
+		const slides = videos.map(video => {
+			console.log(video.images[0].url);
 			return (
 				<div key={video.id.toString()} class="slide-item">
 					<div class="placeholder-image"></div>
-					<img class="image" alt="Image not found" title="Click to watch video" src={video.images[0].url ? video.images[0].url : "../../assets/images/placeholder-image.jpg"} onClick={() => this.handleClick(video)}/>
+					<img
+						class="image"
+						alt="Image not found"
+						title="Click to watch video"
+						src={video.images[0].url
+									? video.images[0].url
+									: "../../assets/images/placeholder-image.jpg"}
+						onClick={() => this.handleClick({ url: video.contents[0].url, title: video.title })}
+					/>
 					<div class="details">
-						<h4 class="title" title="Click to watch video" onClick={() => this.handleClick({ url: video.contents[0].url, title: video.title })}>{video.title}</h4>
+						<h4
+							class="title"
+							title="Click to watch video"
+							onClick={() => this.handleClick({ url: video.contents[0].url, title: video.title })}>
+							{video.title}
+						</h4>
 						<p class="sub-title">
 							<span class="year">{new Date(video.publishedDate).getFullYear()}</span>
 							<span class="lang">{video.metadata[0].value.toUpperCase()}</span>
