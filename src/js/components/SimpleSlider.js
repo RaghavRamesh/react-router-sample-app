@@ -73,7 +73,6 @@ export default class SimpleSlider extends React.Component {
 
 		// Generates the slide DOM for each video
 		// TODO: Extract into a Slide component
-
 		const slides = videos.map(video => {
 			console.log(video.images[0].url);
 			return (

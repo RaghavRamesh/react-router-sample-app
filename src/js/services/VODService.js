@@ -5,7 +5,8 @@ import axios from 'axios';
  */
 export default class VODService {
 	/**
-	 * Constructor function that stores the passed in API endpoint URL as a data member.
+	 * Constructor function that stores the passed in API endpoint URL as a data
+	 * member.
 	 * @param {String} API URL
 	 */
 	constructor(endpointUrl) {
@@ -13,7 +14,8 @@ export default class VODService {
 	}
 
 	/**
-	 * GETs video data from the configured endpoint. Logs the error if the request failed.
+	 * GETs video data from the configured endpoint. Logs the error if the request
+	 * failed.
 	 * @returns {Array<Object>}
 	 */
 	getData() {
@@ -22,7 +24,7 @@ export default class VODService {
 				response.status === 200 ? response.data.entries : []
 			)
 			.catch(error =>
-				console.log(error)
+				[]
 			);
 	}
 }
