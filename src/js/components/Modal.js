@@ -30,6 +30,7 @@ export default class Modal extends React.Component {
   }
 }
 
+// Using React's built-in abilities for typechecking.
 Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
   show: PropTypes.bool,

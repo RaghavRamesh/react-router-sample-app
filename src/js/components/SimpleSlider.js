@@ -10,7 +10,10 @@ import style from '../../sass/styles.scss';
  */
 export default class SimpleSlider extends React.Component {
   constructor(props) {
+    // Allows to use this.props in the constructor
     super(props);
+
+    // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
 
     this.state =  {

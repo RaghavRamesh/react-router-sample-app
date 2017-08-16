@@ -16,9 +16,13 @@ const vodService = new VODService(config.vodService.endpointUrl);
  */
 export default class SimpleSliderContainer extends React.Component {
   constructor(props) {
+    // Allows to use this.props in the constructor
     super(props);
+
+    // This binding is necessary to make `this` work in the callback
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+
     this.state = {
       videoData: [],
       modal: {
