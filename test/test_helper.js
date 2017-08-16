@@ -32,7 +32,7 @@ describe('Testing VODService with a mock backend', () => {
       });
 
     testVODService.getData()
-      .then((entries) => {
+      .then(entries => {
         entries.should.be.a('array');
         done();
       })
@@ -47,7 +47,7 @@ describe('Testing VODService with a mock backend', () => {
       .reply(201);
 
     testVODService.getData()
-      .then((entries) => {
+      .then(entries => {
         entries.length.should.be.eql(0);
         done();
       })
@@ -62,7 +62,7 @@ describe('Testing VODService with a mock backend', () => {
       .reply(404);
 
     testVODService.getData()
-      .then((entries) => {
+      .then(entries => {
         entries.length.should.be.eql(0);
         done();
       })
@@ -77,7 +77,7 @@ describe('Testing VODService with a mock backend', () => {
       .reply(500);
 
     testVODService.getData()
-      .then((entries) => {
+      .then(entries => {
         entries.length.should.be.eql(0);
         done();
       })

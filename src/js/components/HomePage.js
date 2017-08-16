@@ -6,7 +6,7 @@ import SimpleSliderContainer from '../containers/SimpleSliderContainer';
  * SimpleSliderContainer component.
  */
 export default class HomePage extends React.Component {
-	render(props) {
-		return <SimpleSliderContainer></SimpleSliderContainer>;
-	}
+  render(props) {
+    return <SimpleSliderContainer></SimpleSliderContainer>;
+  }
 }
