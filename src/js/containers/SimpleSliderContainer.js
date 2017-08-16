@@ -32,6 +32,10 @@ export default class SimpleSliderContainer extends React.Component {
     };
   }
 
+  /**
+   * Fetches the video data from the VODService and updates the component state
+   * after the element has been rendered.
+   */
   componentDidMount() {
     vodService.getData()
     .then(videoData =>
@@ -59,7 +63,8 @@ export default class SimpleSliderContainer extends React.Component {
   }
 
   /**
-   * Updates the state which causes the modal to hide. Clears the video related data.
+   * Updates the state which causes the modal to hide. Clears the video related
+   * data.
    */
   closeModal() {
     this.setState({

@@ -9,7 +9,7 @@ const nock = require('nock');
 
 describe('Testing VODService with a mock backend', () => {
   it('should receive an array of entries if the response from the server was successful with status code 200', (done) => {
-    nock('http://127.0.0.1:3000/api/videos/')
+    nock(config.vodService.endpointUrl)
       .get('')
       .reply(200, {
         "entries": [
@@ -42,7 +42,7 @@ describe('Testing VODService with a mock backend', () => {
   });
 
   it('should receive an empty array of entries if the response from the server was successful but status code was not 200', (done) => {
-    nock('http://127.0.0.1:3000/api/videos/')
+    nock(config.vodService.endpointUrl)
       .get('')
       .reply(201);
 
@@ -57,7 +57,7 @@ describe('Testing VODService with a mock backend', () => {
   });
 
   it('should receive an empty array of entries if the response code from the server was 4xx', (done) => {
-    nock('http://127.0.0.1:3000/api/videos/')
+    nock(config.vodService.endpointUrl)
       .get('')
       .reply(404);
 
@@ -72,7 +72,7 @@ describe('Testing VODService with a mock backend', () => {
   });
 
   it('should receive an empty array of entries if the response code from the server was 5xx', (done) => {
-    nock('http://127.0.0.1:3000/api/videos/')
+    nock(config.vodService.endpointUrl)
       .get('')
       .reply(500);
 
