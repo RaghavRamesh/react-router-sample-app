@@ -31,15 +31,17 @@ export default class SimpleSlider extends React.Component {
           breakpoint: 480,
           settings: {
             slidesToShow: 1,
+            arrows: false,
             dots: false
           }
         }, {
-          breakpoint: 668,
+          breakpoint: 768, // iPad
           settings: {
-            slidesToShow: 2
+            slidesToShow: 2,
+            arrows: false
           }
         }, {
-          breakpoint: 1000,
+          breakpoint: 1024, // iPad Pro
           settings: {
             slidesToShow: 3
           }
@@ -113,7 +115,10 @@ export default class SimpleSlider extends React.Component {
                   <td class="value">
                   {
                     video.credits.map((credit, index, array) => {
+                      // Ignore the first value in the array as that's assumed
+                      // to be the Director
                       if (index > 0) {
+                        // Add ', ' after every credit except the last
                         if (index < array.length - 1)
                           return credit.name + ', ';
                         else
